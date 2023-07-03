@@ -1,0 +1,60 @@
+@import url("Templates.css");
+/* Titulo, Contenido y Imagen */
+#content {
+  color: aliceblue;
+  padding: 50px 50px;
+  text-align: center;
+}
+#Fondo {
+  background-image: url("https://pbs.twimg.com/media/Fw42nfJX0AInNp6?format=jpg&name=4096x4096");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 100px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 50% 100%, 0% 80%);
+}
+/* Contenido de Ficha: Contorno,Texto,Imagen */
+.BlockText {
+  display: flex;
+  position: relative; /* Establece el contexto de posicionamiento para el div */
+  background-color: #454654;
+  border-radius: 30px;
+  margin: 100px auto;
+  justify-content: space-between;
+}
+.section {
+  color: white;
+  flex-basis: 50%;
+  padding: 50px;
+  padding-right: 10px;
+}
+.Image-Style {
+  object-position: 50%;
+  position:relative;
+  width: 500px; /* Cambia el tamaño de la imagen según tus necesidades */
+  height: 500px; /* Cambia el tamaño de la imagen según tus necesidades */
+  object-fit:cover;
+  clip-path: circle(100% at 100% 100%); /* Aplica un recorte circular hasta la mitad */
+}
+.Image-Position{
+  justify-content: end;
+  display: flex;
+} 
+@media (max-width: 700px) {
+  /*Content Index*/
+  .BlockText {
+    display: block;
+    position: relative;
+    margin: 100px 0;
+    width: auto;
+    background-color: #454654;
+    border-radius: 30px;
+  }
+}
+@media (min-width: 1000px) {
+  /*Content Index*/
+  .BlockText {
+    width: 1000px;
+  }
+}
+
