@@ -14,8 +14,8 @@
         </div>
     </nav>
     <p>© 2023 PROYECTO. Todos los derechos reservados | Desarrollado por <a
-            href="https://github.com/JoseMiguelAl/TiendaGod">JoseMiguel JuanFelipe JuanPablo</a></p>
-    <p>© GitHub<a href="https://github.com/JoseMiguelAl/TiendaGod"> Observador</a></p>
+            href="https://github.com/GaspaObito">JoseMiguel JuanFelipe JuanPablo</a></p>
+    <p>© GitHub<a href="https://github.com/GaspaObito/ProyectoQuintoSemestre"> Observador</a></p>
 </footer>
 </body>
 
