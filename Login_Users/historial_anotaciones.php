@@ -95,40 +95,19 @@
                         <label>Resultados Obtenidos: (' . $totalFilas . ')</label>';
                 while ($extraido = mysqli_fetch_array($consultar2)) {
                     echo '
-                           <div class="DatosUsuario">
-                                <div>
-                                    <label>T.FALTA</label>
-                                    <input readonly class="Input_Text" type="text" placeholder="Tipo de falta" value="' . $extraido['Tipo_Falta'] . '">
-                                </div>
-                                <div>
-                                    <label>FECHA</label>
-                                    <input  readonly class="Input_Text" type="text" placeholder="Fecha" value="' . $extraido['Fecha_Creacion'] . '">
-                                </div>
-                                <div class="img_margen">   
-                                        <div class="color__img">
-                                        <style>
-                                        .custom-button {
-                                        background: none;
-                                        border: none;
-                                          padding: 0;
-                                          cursor: pointer;
-                                         }
-                                        </style>
-                                        <form action="descripcion_anotacion.php" method="post">   
-                                            <input type="hidden" name="NumeroVer" value="' . $extraido['Id_Anotacion'] . '">       
-                                              <button name="VerAnotacion" type="submit" class="img_margen custom-button">
-                                                  <div class="img_margen">                                     
-                                                     <div class="color__img">
-                                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                         <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor" />
-                                                          </svg>
-                                                     </div> 
-                                               </div>                                           
-                                               </button>
-                                             </form>   
-                                        </div>                            
-                                </div>                   
+                        <div class="DatosUsuario">
+                            <label>T.FALTA</label>
+                                <input readonly class="Input_Text" type="text" placeholder="Tipo de falta" value="' . $extraido['Tipo_Falta'] . '">
+                            <label>FECHA</label>
+                                <input  readonly class="Input_Text" type="text" placeholder="Fecha" value="' . $extraido['Fecha_Creacion'] . '">
+                            <form action="descripcion_anotacion.php" method="post">   
+                                <input type="hidden" name="NumeroVer" value="' . $extraido['Id_Anotacion'] . '">       
+                                <button name="VerAnotacion" type="submit" class="img_margen custom-button">
+                                    <svg class="navbar-icon">
+                                        <use xlink:href="../Assets/Svg/Arrow.svg#Arrow-icon">
+                                     </svg>                                           
+                                </button>
+                            </form>                    
                         </div>';
                 }
                 echo '
