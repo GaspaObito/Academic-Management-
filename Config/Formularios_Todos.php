@@ -138,7 +138,6 @@ if (isset($_POST["Enviar5"])) {
     $descripcion = $_POST["descripcion"];
     $sql_detalle = "INSERT INTO anotacion(Nombre_Profesor,Id_Estudiante,Tipo_Falta,Descripcion_Falta,Fecha_Creacion) VALUES(
         '" . addslashes($nombre) . "','" . addslashes($idEstudiante) . "','" . addslashes($tipoFalta) . "','" . addslashes($descripcion) . "',NOW())";
-
     /* Validar insercion */
     $resultado = mysqli_query($conexion, $sql_detalle) or die
         ("ERROR EN LA INSERCION" . $Id_Persona);
@@ -158,7 +157,7 @@ if (isset($_POST["Enviar6"])) {
     $resultado = mysqli_query($conexion, $sql_detalle) or die
         ("ERROR EN LA INSERCION" . $Id_Persona);
     mysqli_close($conexion);
-    echo "<script>alert('LOS REGISTROS SE INSERTARON CORRECTAMENTE')</script>";
+    echo "<script>alert('LOS REGISTROS SE ACTUALIZARON CORRECTAMENTE')</script>";
     echo "<script>location.href = '../Profesor/historial_anotaciones.php'</script>";
 }
 ?>
