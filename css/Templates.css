@@ -15,8 +15,7 @@ html {
 *,
 *:before,
 *:after {
-  /*Sirven para que cuando se le añada por ejemplo un heigt y un padding no cambie las
-                         el tamaño de la imagen */
+  /*Sirven para que cuando se le añada por ejemplo un heigt y un padding no cambie las el tamaño de la imagen */
   box-sizing: inherit;
 }
 body {
@@ -128,6 +127,12 @@ footer p {
   padding-right: 0.5rem;
   display: table-caption;
 }
+.custom-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
 /* Tamaño Margenes Button */
 .margen__boton {
   padding-left: 0.7rem;
@@ -147,6 +152,10 @@ footer p {
     inset 2px 2px 4px rgba(170, 170, 204, 0.25),
     inset 5px 5px 10px rgba(170, 170, 204, 0.5), inset -5px -5px 10px #ffffff;
   border-radius: 1rem;
+}
+.Input_Text--BgNone {
+  box-shadow: none;
+  background: none;
 }
 .setting {
   display: flex;
@@ -185,9 +194,7 @@ input,textarea,.Input_Text {
   border: none;
   height: 45rem;
   border-radius: 1em;
-  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),
-    inset 2px 2px 4px rgba(170, 170, 204, 0.25),
-    inset 5px 5px 10px rgba(170, 170, 204, 0.5), inset -5px -5px 10px #ffffff;
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),inset 2px 2px 4px rgba(170, 170, 204, 0.25),inset 5px 5px 10px rgba(170, 170, 204, 0.5), inset -5px -5px 10px #ffffff;
 }
 .DatosUsuario {
   margin-bottom: 2rem;
@@ -195,12 +202,16 @@ input,textarea,.Input_Text {
   padding: 0.5rem;
   border: none;
   width: 100%;
-  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),
-    inset 2px 2px 4px rgba(170, 170, 204, 0.25),
-    inset 5px 5px 10px rgba(170, 170, 204, 0.5), inset -5px -5px 10px #ffffff;
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5),inset 2px 2px 4px rgba(170, 170, 204, 0.25),inset 5px 5px 10px rgba(170, 170, 204, 0.5), inset -5px -5px 10px #ffffff;
   border-radius: 1.5rem;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+}
+/*Svg Styles*/
+.navbar-icon{
+  width:40px;
+  height:40px;
+  margin-right: 10px;
 }
 /* Estilos para la barra de desplazamiento */
 ::-webkit-scrollbar {
