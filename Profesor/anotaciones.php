@@ -423,15 +423,8 @@
                         <a href="anotaciones_busc.php">
                             <div class="botonAtras">
                                 <div class="margen__boton">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-arrow-bar-to-left" width="40" height="40"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                        <path d="M10 12l10 0"></path>
-                                        <path d="M10 12l4 4"></path>
-                                        <path d="M10 12l4 -4"></path>
-                                        <path d="M4 4l0 16"></path>
+                                    <svg class="navbar-icon" style="margin:0;">
+                                        <use xlink:href="../Assets/Svg/Arrow_Back.svg#Arrow_Back-icon">
                                     </svg>
                                 </div>
                             </div>

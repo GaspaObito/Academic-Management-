@@ -22,7 +22,6 @@
             </div> 
             <h3 id="DataUser">DATOS DEL ESTUDIANTE</h3>
                         <div class="usuario__campo">';
-
                 $IdGeneral = $extraido['Id_Estudiante'];
                 $NomGeneral = $extraido['NombreCompleto'];
                 echo ' <label>Nombre:</label>
@@ -50,23 +49,16 @@
             <div class="nav__miniventana">
                 <a></a>
                 <h1 id="TitleStart">ANOTACIONES</h1>
-
                 <div><a href="anotaciones.php">
                         <div class="botonAtras">
                             <div class="margen__boton">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="icon icon-tabler icon-tabler-arrow-bar-to-left" width="40" height="40"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                                    <path d="M10 12l10 0"></path>
-                                    <path d="M10 12l4 4"></path>
-                                    <path d="M10 12l4 -4"></path>
-                                    <path d="M4 4l0 16"></path>
+                                <svg class="navbar-icon" style="margin:0;">
+                                   <use xlink:href="../Assets/Svg/Arrow_Back.svg#Arrow_Back-icon">
                                 </svg>
                             </div>
                         </div>
-                    </a></div>
+                    </a>
+                </div>
             </div>
             <?php
             $consultar2 = mysqli_query($conexion, "select * from anotacion WHERE Id_Estudiante='$Id_Est'") or die("ERROR AL TRAER LOS DATOS");
@@ -79,58 +71,36 @@
             echo '<label>Resultados Obtenidos: (' . $totalFilas . ')</label>';
             $contador = 1;
             while ($extraido = mysqli_fetch_array($consultar2)) {
-
-                echo '      <div class="DatosUsuario">
-                                   <div class="nombre">
-                                        <label>ANOTACIÓN ' . $contador++ . '</label>
-                                    </div>
-                                    <div>
-                                        <label>T.FALTA</label>
-                                        <input readonly class="Input_Text" type="text" placeholder="Tipo de falta" value="' . $extraido['Tipo_Falta'] . '">
-                                    </div>
-                                    <div>
-                                        <label>FECHA</label>
-                                        <input readonly class="Input_Text" type="text" placeholder="Fecha" value="' . $extraido['Fecha_Creacion'] . '">
-                                    </div>
-                                    <style>
-                                    .custom-button {
-                                    background: none;
-                                    border: none;
-                                      padding: 0;
-                                      cursor: pointer;
-                                     }
-                                    </style>
-                                    <form action="historial_anotaciones.php" method="post">       
-                                     <input type="hidden" name="NumeroEliminar" value="' . $extraido['Id_Anotacion'] . '">
-                                     <button name="EliminarDato" type="submit" class="img_margen custom-button">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                            <path d="M4 7l16 0" />
-                                            <path d="M10 11l0 6" />
-                                            <path d="M14 11l0 6" />
-                                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
-                                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
-                                            </svg>
-                                        </button>
-                                    </form>                                  
-                                   <form action="descripcion_anotacion.php" method="post">   
-                                   <input type="hidden" name="NumeroModificar" value="' . $extraido['Id_Anotacion'] . '">       
-                                     <input type="hidden" name="NumeroInsertar" value="' . $Id_Est . '">
-                                     <button name="InsertarAnotacion" type="submit" class="img_margen custom-button">
-                                         <div class="img_margen">                                     
-                                            <div class="color__img">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-big-right-filled" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                                <path d="M12.089 3.634a2 2 0 0 0 -1.089 1.78l-.001 2.586h-6.999a2 2 0 0 0 -2 2v4l.005 .15a2 2 0 0 0 1.995 1.85l6.999 -.001l.001 2.587a2 2 0 0 0 3.414 1.414l6.586 -6.586a2 2 0 0 0 0 -2.828l-6.586 -6.586a2 2 0 0 0 -2.18 -.434l-.145 .068z" stroke-width="0" fill="currentColor" />
-                                                 </svg>
-                                            </div> 
-                                      </div>                                           
-                                      </button>
-                                    </form>   
-                                </div>';
+                echo '<div class="DatosUsuario">
+                                <label>Anot</label>
+                                <input readonly class="Input_Text Input_Text--BgNone" style="width:50px;" type="text" placeholder="Tipo de falta" value="'.$contador++.'">
+                                <label>T.Falta</label>
+                                <input readonly class="Input_Text Input_Text--BgNone" type="text" placeholder="Tipo de falta" value="' . $extraido['Tipo_Falta'] . '">
+                                <label>F.Creada</label>
+                                <input readonly class="Input_Text Input_Text--BgNone" type="text" placeholder="Fecha" value="' . $extraido['Fecha_Creacion'] . '">
+                                <label>F.Modificada</label>
+                                <input readonly class="Input_Text Input_Text--BgNone" type="text" placeholder="Fecha" value="' . $extraido['Fecha_Modificacion'] . '">
+                            <form action="historial_anotaciones.php" method="post">       
+                                <input type="hidden" name="NumeroEliminar" value="' . $extraido['Id_Anotacion'] . '">
+                                <button name="EliminarDato" type="submit" class="img_margen custom-button">
+                                    <svg class="navbar-icon">
+                                        <use xlink:href="../Assets/Svg/Trash.svg#Trash-icon">
+                                    </svg> 
+                                </button>
+                            </form>                                  
+                            <form action="descripcion_anotacion.php" method="post">   
+                                <input type="hidden" name="NumeroModificar" value="' . $extraido['Id_Anotacion'] . '">       
+                                <input type="hidden" name="NumeroInsertar" value="' . $Id_Est . '">
+                                <button name="InsertarAnotacion" type="submit" class="img_margen custom-button">
+                                    <svg class="navbar-icon">
+                                        <use xlink:href="../Assets/Svg/Arrow.svg#Arrow-icon">
+                                    </svg>                                 
+                                </button>
+                            </form>   
+                        </div>';
             }
             echo '</div>
-                    </div>';
+                </div>';
             if (isset($_POST["EliminarDato"])) {
                 $NumeroEliminar = $_POST['NumeroEliminar'];
                 echo '<script>
