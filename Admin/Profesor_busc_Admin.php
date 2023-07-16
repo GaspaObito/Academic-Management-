@@ -18,11 +18,12 @@
         </form>
         <?php
         include '../Config/Conexion.php';
+        /*SEARCH ID UNIQUE TEACHER BLOCK*/
         if (isset($_POST["buscarDatos"])) {
             $Id_Profe = $_POST['Identificacionn'];
             $consultar = mysqli_query($conexion, "SELECT CONCAT(o.Nombre, ' ', o.Apellido) AS NombreCompleto, o.*, c.Nom_Curso
             FROM profesor o  LEFT JOIN curso c ON o.Id_Profesor = c.Id_Profesor WHERE o.Id_Profesor='$Id_Profe'") or die("ERROR AL TRAER LOS DATOS");
-            echo '            
+            ?>            
             <div class="Container1">
                 <table class="Custom_Table">
                     <thead>
@@ -34,17 +35,16 @@
                             <th>Acciones</th>
                         </tr>
                     </thead>                  
-                    <tbody>'; 
-                    while ($extraido = mysqli_fetch_array($consultar)) {
-                        echo '
+                    <tbody>
+                    <?php while ($extraido = mysqli_fetch_array($consultar)) { ?>
                         <tr>
-                            <td>' . $extraido['Id_Profesor'] . '</td>
-                            <td>' . $extraido['NombreCompleto'] . '</td>
-                            <td>' . $extraido['Asignatura'] . '</td>
-                            <td>' . $extraido['Nom_Curso'] . '</td>
-                            <td>
+                            <td><?php echo $extraido['Id_Profesor']; ?></td>
+                            <td><?php echo $extraido['NombreCompleto']; ?></td>
+                            <td><?php echo $extraido['Asignatura']; ?></td>
+                            <td><?php echo $extraido['Nom_Curso']; ?></td>
+                            <td class="td_Actions">
                                 <form action="Profesor_busc_Admin.php" method="post">       
-                                    <input type="hidden" name="NumeroEliminar" value="' . $extraido['Id_Profesor'] . '">
+                                    <input type="hidden" name="NumeroEliminar" value="<?php echo $extraido['Id_Profesor']; ?>">
                                     <button name="EliminarDato" class="custom-button" type="submit">
                                         <svg class="navbar-icon" style="margin:0">
                                            <use xlink:href="../Assets/Svg/Trash.svg#Trash-icon">
@@ -52,21 +52,22 @@
                                     </button>
                                 </form>                               
                                 <form action="actualizar_profesor.php" method="post">   
-                                    <input type="hidden" name="NumeroModificar" value="' . $extraido['Id_Profesor'] . '">
+                                    <input type="hidden" name="NumeroModificar" value="<?php echo $extraido['Id_Profesor']; ?>">
                                     <button name="InsertarAnotacion" class="custom-button" type="submit">                                                                       
                                         <svg class="navbar-icon" style="margin:0">
-                                            <use xlink:href="../Assets/Svg/Arrow.svg#Arrow-icon">
+                                            <use xlink:href="../Assets/Svg/Edit.svg#Edit-icon">
                                         </svg>                                                           
                                     </button>
                                 </form> 
                             </td>               
-                        </tr>';
-                        }echo '
+                        </tr>
+                    <?php } ?>
                     </tbody>
                 </table>
             </div>    
-            </div>';
-            /*SEARCH ID UNIQUE STUDENT BLOCK*/
+            </div>
+            <?php
+            /*SEARCH ID UNIQUE TEACHER BLOCK*/
         } else {
             /* Utilizar Join para Ingresar el otro Campos de Curso */
             $consultar = mysqli_query($conexion, "SELECT CONCAT(o.Nombre, ' ', o.Apellido) AS NombreCompleto, o.*, c.Nom_Curso
@@ -77,9 +78,9 @@
             $resultado = mysqli_query($conexion, $query);
             $datos = mysqli_fetch_assoc($resultado);
             $totalFilas = $datos['total'];
-            echo '            
+            ?>          
                 <div class="Container1">
-                    <label>Resultados Obtenidos: (' . $totalFilas . ')</label>
+                    <label>Resultados Obtenidos: (<?php echo $totalFilas ?>)</label>
                     <table class="Custom_Table">
                         <thead>
                             <tr>
@@ -90,17 +91,16 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>                  
-                        <tbody>'; 
-                        while ($extraido = mysqli_fetch_array($consultar)) {
-                            echo '
+                        <tbody>
+                        <?php while ($extraido = mysqli_fetch_array($consultar)) { ?>
                             <tr>
-                                <td>' . $extraido['Id_Profesor'] . '</td>
-                                <td>' . $extraido['NombreCompleto'] . '</td>
-                                <td>' . $extraido['Asignatura'] . '</td>
-                                <td>' . $extraido['Nom_Curso'] . '</td>
-                                <td>
+                                <td><?php echo $extraido['Id_Profesor']; ?></td>
+                                <td><?php echo $extraido['NombreCompleto']; ?></td>
+                                <td><?php echo $extraido['Asignatura']; ?></td>
+                                <td><?php echo $extraido['Nom_Curso']; ?></td>
+                                <td class="td_Actions">
                                     <form action="Profesor_busc_Admin.php" method="post">       
-                                        <input type="hidden" name="NumeroEliminar" value="' . $extraido['Id_Profesor'] . '">
+                                        <input type="hidden" name="NumeroEliminar" value="<?php echo $extraido['Id_Profesor']; ?>">
                                         <button name="EliminarDato" class="custom-button" type="submit">
                                             <svg class="navbar-icon" style="margin:0">
                                                <use xlink:href="../Assets/Svg/Trash.svg#Trash-icon">
@@ -108,24 +108,25 @@
                                         </button>
                                     </form>                               
                                     <form action="actualizar_profesor.php" method="post">   
-                                        <input type="hidden" name="NumeroModificar" value="' . $extraido['Id_Profesor'] . '">
+                                        <input type="hidden" name="NumeroModificar" value="<?php echo $extraido['Id_Profesor']; ?>">
                                         <button name="InsertarAnotacion" class="custom-button" type="submit">                                                                       
                                             <svg class="navbar-icon" style="margin:0">
-                                                <use xlink:href="../Assets/Svg/Arrow.svg#Arrow-icon">
+                                                <use xlink:href="../Assets/Svg/Edit.svg#Edit-icon">
                                             </svg>                                                           
                                         </button>
                                     </form> 
                                 </td>               
-                            </tr>';
-                            }echo '
+                            </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>    
-                </div>';
-            }
+                </div>
+            <?php }
             if (isset($_POST["EliminarDato"])) {
                 $NumeroEliminar = $_POST['NumeroEliminar'];
-                echo '<script>
+                ?>
+                <script>
                     var numeroEliminar = "' . $NumeroEliminar . '";
                     if (confirm("¿Estás seguro de que deseas eliminar los datos?")) {
                         // Redirigir al servidor para eliminar los datos
@@ -135,8 +136,8 @@
                         alert("Eliminación cancelada");
                         location.href = "Profesor_busc_Admin.php";
                     }
-                </script>';
-            } ?>
+                </script>
+           <?php } ?>
         </div>
         <div class="alinear-boton">
             <a href="../Formulario/R_profesor.php"> <button class="boton" type="submit" name="buscarDatos">AÑADIR PROFESOR</button></a>
