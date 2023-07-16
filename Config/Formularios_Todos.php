@@ -57,7 +57,7 @@ if (isset($_POST["EnviarFormulario"])) {
     $Apellido_Est = $_POST["Apellido_Est"];
     $Telefono_Est = $_POST["Telefono_Est"];
     $Fecha_Nacimiento_Est = $_POST["Fecha_Nacimiento_Est"];
-    $Direccion_Est = $_POST["Direccion_Est"];
+    $Residencia_Est = $_POST["Residencia_Est"];
     $Lugar_Nacimiento_Est = $_POST["Lugar_Nacimiento_Est"];
     $NumeroIdentif_Est = $_POST["NumeroIdentif_Est"];
     $FornCurso = $_POST["FornCurso"];
@@ -72,23 +72,29 @@ if (isset($_POST["EnviarFormulario"])) {
     // Mover la imagen a la carpeta de destino
     move_uploaded_file($Imagen_temporal, "../Assets/Photos_Students/$NombreImagen");
     // Insertar en la base de datos
-    $sql_TbImagen = "INSERT INTO imagenes (Nombre_Imagen, imagen) VALUES (?, ?)";
+    $sql_TbImagen = "INSERT INTO imagenes (Nombre_Imagen, imagen) VALUES (?, ?)";//MAX FILE SIZE 8MG
     $stmt = $conexion->prepare($sql_TbImagen);
     $stmt->bind_param('ss', $NombreImagen, $BinarioImagen);
     $stmt->execute();
     $stmt->close();
     /* Obtener el último ID insertado */
     $ultimoId_Imagen = mysqli_insert_id($conexion);
-
-    $sql_detalle = "INSERT INTO observador(Nombre_Estudiante,Id_Imagen,Apellido_Estudiante,Numero_Documento,Id_DatosFamiliar,Id_Historial_Escolar,Id_Medicina,Id_Curso,Tel_Cel,Fecha_Nacimiento,LugarNacimiento,Direccion,Edad) VALUES(
-    '" . $Nombre_Est . "','" . $ultimoId_Imagen . "','" . $Apellido_Est . "','" . $NumeroIdentif_Est . "','" . $ultimoId_DatosFamiliar . "','" . $ultimoId_HistorialEscolar . "','" . $ultimoId_InfoMedica . "','" . $FornCurso . "','" . $Telefono_Est . "','" . $Fecha_Nacimiento_Est . "','" . $Lugar_Nacimiento_Est . "','" . $Direccion_Est . "','" . $Edad_Est . "')";
+    $sql_detalle = "INSERT INTO observador(Nombre_Estudiante,Id_Imagen,Apellido_Estudiante,Numero_Documento,Id_DatosFamiliar,Id_Historial_Escolar,Id_Medicina,Id_Curso,Tel_Cel,Fecha_Nacimiento,LugarNacimiento,Residencia,Edad) VALUES(
+    '" . $Nombre_Est . "','" . $ultimoId_Imagen . "','" . $Apellido_Est . "','" . $NumeroIdentif_Est . "','" . $ultimoId_DatosFamiliar . "','" . $ultimoId_HistorialEscolar . "','" . $ultimoId_InfoMedica . "','" . $FornCurso . "','" . $Telefono_Est . "','" . $Fecha_Nacimiento_Est . "','" . $Lugar_Nacimiento_Est . "','" . $Residencia_Est . "','" . $Edad_Est . "')";
     /* Insertar datos en la tabla */
     $resultado = mysqli_query($conexion, $sql_detalle) or die
         ("ERROR EN LA INSERCION" . $Id_Persona);
     /*FINALIZA ESTUDIANTE*/
+    /*ACTUALIZA CURSOS*/
+    $sql_curso = "UPDATE curso c SET Numero_Alumnos = (SELECT COUNT(*) FROM observador o 
+    WHERE o.Id_Curso = c.Id_Curso)";
+    $resultado = mysqli_query($conexion, $sql_curso) or die
+    ("ERROR EN LA INSERCION" . $Id_Persona);
+    /*FINALIZA ACTUALIZA CURSOS*/
+    /*FINALIZA INSERCCION*/
     mysqli_close($conexion);
-    echo "(<script>alert('LOS REGISTROS SE INSERTARON CORRECTAMENTE')</script>)";
-    echo "<script>location.href = '../Formulario/Formularios.php'</script>";
+    echo "(<script>alert('LOS REGISTROS SE CREARON CORRECTAMENTE')</script>)";
+    echo "<script>location.href = '../Formulario/Create_Estudiante.php'</script>";
 }
 /* R_PROFESOR */
 if (isset($_POST["Enviar2"])) {
@@ -152,7 +158,7 @@ if (isset($_POST["Enviar6"])) {
     $tipoFalta = $_POST["tipoFalta"];
     $descripcion = $_POST["descripcion"];
     $sql_detalle = "UPDATE anotacion SET Nombre_Profesor_Modif='" . $nombre . "',Tipo_Falta='" . $tipoFalta . "', Descripcion_Falta='" . $descripcion . "'
-    , Fecha_Modificacion=NOW() WHERE Id_Anotacion=" . $Id_Anota;
+    WHERE Id_Anotacion=" . $Id_Anota;
     /* Validar insercion */
     $resultado = mysqli_query($conexion, $sql_detalle) or die
         ("ERROR EN LA INSERCION" . $Id_Persona);

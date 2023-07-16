@@ -24,9 +24,9 @@
         $resultado = mysqli_query($conexion, $query);
         $datos = mysqli_fetch_assoc($resultado);
         $totalFilas = $datos['total'];
-        echo '
+        ?>
         <div class="Container1" style="height: 80rem;">
-            <div><label>Resultados Obtenidos: (' . $totalFilas . ')</label></div>
+            <div><label>Resultados Obtenidos: (<?php echo $totalFilas ?>)</label></div>
             <table class="Custom_Table">
                 <thead>
                     <tr>
@@ -38,25 +38,23 @@
                         <th>Tipo_cambio</th>
                         <th>Descripcion_Anterior</th>
                     </tr>
-                </thead>';
-                /* TITULO DE LAS COLUMNAS */
-                /* CUERPO DE LA TABLA */
-                echo '<tbody>';
-                    while ($extraido = mysqli_fetch_array($consultar)) {
-                    echo'
+                </thead>
+                <!-- TITULO DE LAS COLUMNAS -->
+                <!-- CUERPO DE LA TABLA -->
+                <tbody>
+                    <?php while ($extraido = mysqli_fetch_array($consultar)) { ?>
                     <tr>
-                        <td>' . $extraido['Nombre_Profesor'] . '</td>
-                        <td>' . $extraido['Id_Anotacion'] . '</td>
-                        <td>' . $extraido['Numero_Documento'] . '</td>
-                        <td>' . $extraido['TipoFalta_Anterior'] . '</td>
-                        <td>' . $extraido['Fecha_Modificacion'] . '</td>
-                        <td>' . $extraido['Tipo_cambio'] . '</td>
-                        <td class="descripcion-anterior" >' . $extraido['Descripcion_Anterior'] . '</td>
-                    </tr>';
-                    }
-                echo '</tbody>
+                        <td><?php echo $extraido['Nombre_Profesor']; ?></td>
+                        <td><?php echo $extraido['Id_Anotacion']; ?></td>
+                        <td><?php echo $extraido['Numero_Documento']; ?></td>
+                        <td><?php echo $extraido['TipoFalta_Anterior']; ?></td>
+                        <td><?php echo $extraido['Fecha_Modificacion']; ?></td>
+                        <td><?php echo $extraido['Tipo_cambio']; ?></td>
+                        <td class="descripcion-anterior" ><?php echo $extraido['Descripcion_Anterior']; ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
             </table>
-            </div>';
-        ?>
+            </div>
 </main>
 <?php include("../Template/FooterProfe2.php");
