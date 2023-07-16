@@ -85,7 +85,7 @@
                                     <td>' . $extraido['Tipo_Falta'] . '</td>
                                     <td>' . $extraido['Fecha_Creacion'] . '</td>
                                     <td>' . $extraido['Fecha_Modificacion'] . '</td>
-                                    <td>
+                                    <td class="td_Actions">
                                         <form action="historial_anotaciones.php" method="post">       
                                             <input type="hidden" name="NumeroEliminar" value="' . $extraido['Id_Anotacion'] . '">
                                             <button name="EliminarDato" class="custom-button" type="submit">

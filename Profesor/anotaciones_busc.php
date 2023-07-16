@@ -79,7 +79,7 @@ include '../Config/Conexion.php'; ?>
                             <td>' . $extraido['Numero_Documento'] . '</td>
                             <td>' . $extraido['NombreCompleto'] . '</td>
                             <td>' . $extraido['Nom_Curso'] . '</td>
-                            <td>
+                            <td class="td_Actions">
                                 <form action="anotaciones_busc.php" method="post">       
                                     <input type="hidden" name="NumeroEliminar" value="' . $extraido['Id_Estudiante'] . '">
                                     <button name="EliminarDato" class="custom-button" type="submit">
@@ -87,7 +87,15 @@ include '../Config/Conexion.php'; ?>
                                            <use xlink:href="../Assets/Svg/Trash.svg#Trash-icon">
                                         </svg>  
                                     </button>
-                                </form>                               
+                                </form> 
+                                <form action="../Formulario/Update_Estudiante.php" method="post">   
+                                    <input type="hidden" name="NumeroModificar" value="' . $extraido['Id_Estudiante'] . '">
+                                    <button name="ModificarDato" class="custom-button" type="submit">                                                                       
+                                        <svg class="navbar-icon" style="margin:0">
+                                            <use xlink:href="../Assets/Svg/Edit.svg#Edit-icon">
+                                        </svg>                                                           
+                                    </button>
+                                </form>                            
                                 <form action="anotaciones.php" method="post">   
                                     <input type="hidden" name="NumeroInsertar" value="' . $extraido['Id_Estudiante'] . '">
                                     <button name="InsertarAnotacion" class="custom-button" type="submit">                                                                       
@@ -103,7 +111,7 @@ include '../Config/Conexion.php'; ?>
                 </table>
             </div>    
             <div class="alinear-boton">
-                <a href="../Formulario/Formularios.php"> <button class="boton" type="submit" name="buscarDatos">AÑADIR ESTUDIANTE</button></a>
+                <a href="../Formulario/Create_Estudiante.php"> <button class="boton" type="submit" name="buscarDatos">AÑADIR ESTUDIANTE</button></a>
             </div>
             </div>';
             /*SEARCH ID UNIQUE STUDENT BLOCK*/
@@ -136,7 +144,7 @@ include '../Config/Conexion.php'; ?>
                                 <td>' . $extraido['Numero_Documento'] . '</td>
                                 <td>' . $extraido['NombreCompleto'] . '</td>
                                 <td>' . $extraido['Nom_Curso'] . '</td>
-                                <td>
+                                <td class="td_Actions">
                                     <form action="anotaciones_busc.php" method="post">       
                                         <input type="hidden" name="NumeroEliminar" value="' . $extraido['Id_Estudiante'] . '">
                                         <button name="EliminarDato" class="custom-button" type="submit">
@@ -144,7 +152,15 @@ include '../Config/Conexion.php'; ?>
                                                <use xlink:href="../Assets/Svg/Trash.svg#Trash-icon">
                                             </svg>  
                                         </button>
-                                    </form>                               
+                                    </form>          
+                                    <form action="../Formulario/Update_Estudiante.php" method="post">   
+                                        <input type="hidden" name="NumeroModificar" value="' . $extraido['Id_Estudiante'] . '">
+                                        <button name="ModificarDato" class="custom-button" type="submit">                                                                       
+                                            <svg class="navbar-icon" style="margin:0">
+                                                <use xlink:href="../Assets/Svg/Edit.svg#Edit-icon">
+                                            </svg>                                                           
+                                        </button>
+                                    </form>                      
                                     <form action="anotaciones.php" method="post">   
                                         <input type="hidden" name="NumeroInsertar" value="' . $extraido['Id_Estudiante'] . '">
                                         <button name="InsertarAnotacion" class="custom-button" type="submit">                                                                       
@@ -160,7 +176,7 @@ include '../Config/Conexion.php'; ?>
                     </table>
                 </div>    
                 <div class="alinear-boton">
-                    <a href="../Formulario/Formularios.php"> <button class="boton" type="submit" name="buscarDatos">AÑADIR ESTUDIANTE</button></a>
+                    <a href="../Formulario/Create_Estudiante.php"> <button class="boton" type="submit" name="buscarDatos">AÑADIR ESTUDIANTE</button></a>
                 </div>';
             /*SHOW ALL STUDENTS BLOCK*/
             }
