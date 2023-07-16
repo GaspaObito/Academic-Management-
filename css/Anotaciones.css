@@ -177,10 +177,9 @@ input[type="file"]::file-selector-button:hover {
   border: 1px solid #ddd;
   padding: 8px;
 }
-.Custom_Table tbody td:last-child {
+.Custom_Table td.td_Actions {
   display: flex;
   justify-content: space-evenly;
-  border: none;
 }
 .Custom_Table tr:nth-child(even) {
   background-color: #dadada;
@@ -194,7 +193,8 @@ input[type="file"]::file-selector-button:hover {
   word-wrap: break-word;
 }
 /*FINALIZA Bloque Formulario ActProfe_ActTrigger*/
-@media (max-width: 600px) {
+/*Styles Mobile Tablet*/
+@media (max-width: 768px) {
   .formulario__campos1{
     display: block;
   }

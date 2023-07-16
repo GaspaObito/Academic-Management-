@@ -227,7 +227,8 @@ input,textarea,.Input_Text {
 ::-webkit-scrollbar-thumb:hover {
   background: #555; /* Color del agarre de la barra de desplazamiento al pasar el mouse */
 }
-@media (max-width: 700px) {
+/*Styles Mobile Tablet*/
+@media (max-width: 768px) {
   /*Header Navbar Styles*/
   .navbar-toggler {
     display: block;

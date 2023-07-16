@@ -21,12 +21,13 @@
   border-radius: 30px;
   margin: 100px auto;
   justify-content: space-between;
+  word-wrap: break-word; /* Rompe las palabras largas */
+  word-break: break-word;
 }
 .section {
   color: white;
   flex-basis: 50%;
   padding: 50px;
-  padding-right: 10px;
 }
 .Image-Style {
   object-position: 50%;
@@ -37,10 +38,11 @@
   clip-path: circle(100% at 100% 100%); /* Aplica un recorte circular hasta la mitad */
 }
 .Image-Position{
-  justify-content: end;
   display: flex;
+  justify-content: end;
 } 
-@media (max-width: 700px) {
+/*Styles Mobile Tablet*/
+@media (max-width: 768px) {
   /*Content Index*/
   .BlockText {
     display: block;

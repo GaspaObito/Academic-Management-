@@ -1,5 +1,6 @@
 @import url("Templates.css");
-@media (max-width: 600px) {
+/*Styles Mobile Tablet*/
+@media (max-width: 768px) {
   .contenedor {
     max-width: 140rem;
     margin: 2rem auto 2rem auto;
