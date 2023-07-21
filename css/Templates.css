@@ -41,6 +41,7 @@ fieldset {
   background: var( --bg_linear);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  padding: 1rem;
 }
 .navbar-toggler {
   display: none;
@@ -60,7 +61,6 @@ fieldset {
 }
 /*Logo Img*/
 .LogoHeader {
-  padding-left: 50px;
   align-items: center;
   display: flex;
 }
@@ -72,6 +72,7 @@ fieldset {
 /*Footer Navbar Styles */
 .navbar-footer {
   background: var( --bg_linear);
+  padding: 1rem;
 }
 .navbar-footer p a {
   color: var(--primary);
@@ -81,8 +82,9 @@ fieldset {
   color: #c10000
 }
 .footer-menu {
-  justify-content: space-evenly;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 footer {
   width: 100%;
@@ -154,6 +156,9 @@ footer p {
     inset 5px 5px 10px rgba(170, 170, 204, 0.5), inset -5px -5px 10px #ffffff;
   border-radius: 1rem;
 }
+.usuario__campo {
+  margin: 2rem;
+}
 .Input_Text--BgNone {
   box-shadow: none;
   background: none;
@@ -163,6 +168,11 @@ footer p {
 }
 input,textarea,select.Input_Text {
   font-family: var(--fuente_principal);
+}
+/*formulario de descripcion*/
+.Add_Anotacion {
+  padding-bottom: 50px;
+  display: grid;
 }
 .Add_Anotacion textarea {
   height: 120px;
@@ -180,6 +190,20 @@ select option:first-child {
 }
 select option:checked {
   font-weight: bold;
+}
+/*Styles For Image Container Users*/
+.imagen {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.imagen img {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 120px 20px 120px 20px;
 }
 /*Containers Generales,Datos Usuario*/
 .ContainerGeneral {
@@ -251,13 +275,15 @@ select option:checked {
   .navbar-menu {
     justify-content: initial;
     display: none;
-    padding-left: 0%;
+    padding: 0%;
   }
   .navbar-menu a {
     padding-bottom: 10px;
   }
   .navbar-menu.show {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .navbar-align {
     display: flex;
@@ -266,7 +292,7 @@ select option:checked {
   }
   /*Logo Img*/
   .LogoHeader {
-    padding-left: 0%;
+    padding: 0%;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -276,6 +302,9 @@ select option:checked {
     text-align: center;
     flex-direction: column;
     display: flex;
+  }
+  .navegacion-principal{
+    margin: 0px 5rem;
   }
   .footer-menu a{
     padding-bottom: 10px;

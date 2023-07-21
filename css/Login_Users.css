@@ -32,15 +32,6 @@
 /*FINALIZA Bloque InicioSesion Para PROFESOR ADMIN*/
 
 /*INICIA Bloque InicioSesion Para ACUDIENTE*/
-@media (max-width: 768) {
-  .ContainerGeneral {
-    padding: 20px;
-    margin: 10rem 0 10rem 0;
-  }
-  .bienvenido{
-    display: contents;
-  }
-}
 .Form_Acudiente {
   display: flex;
   flex-direction: column;
@@ -52,5 +43,14 @@
 .ContainerGeneral p {
   font-size: 15px;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .ContainerGeneral {
+    padding: 20px;
+    margin: 10rem 0 10rem 0;
+  }
+  .bienvenido {
+    display: contents;
+  }
 }
 /*FINALIZA Bloque InicioSesion Para ACUDIENTE*/
