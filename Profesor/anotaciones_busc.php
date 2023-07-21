@@ -3,10 +3,10 @@ include '../Config/Conexion.php'; ?>
 <main class="ContainerGeneral">
     <div class="ContainerUser">
         <?php
-        $Id_usuario = $_SESSION['Id_usuario'];
+        $Id_Profe = $_SESSION['Id_Profe'];
         $consultar = mysqli_query($conexion, "SELECT CONCAT(Nombre, ' ', Apellido) AS NombreCompleto, p.*, i.Nombre_Imagen 
         FROM profesor p 
-        LEFT JOIN imagenes i ON p.Id_Imagen = i.Id_Imagen WHERE Id_Profesor='$Id_usuario'") or die("ERROR AL TRAER LOS DATOS");
+        LEFT JOIN imagenes i ON p.Id_Imagen = i.Id_Imagen WHERE Id_Profesor='$Id_Profe'") or die("ERROR AL TRAER LOS DATOS");
         while ($extraido = mysqli_fetch_array($consultar)) {
             $_SESSION['NombreProfe'] = $extraido['NombreCompleto'];
             echo '<div class="usuario__especifico">
