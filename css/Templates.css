@@ -144,6 +144,7 @@ footer p {
 }
 /*Input General*/
 .Input_Text {
+  font-size: inherit;
   appearance: none;
   padding: 1.5rem;
   border: none;
@@ -160,7 +161,7 @@ footer p {
 .setting {
   display: flex;
 }
-input,textarea,.Input_Text {
+input,textarea,select.Input_Text {
   font-family: var(--fuente_principal);
 }
 .Add_Anotacion textarea {
@@ -171,6 +172,14 @@ input,textarea,.Input_Text {
   display: grid;
   grid-template-columns: 15% 70% 15%;;
   align-items: center;
+}
+/* Estilo para la opción seleccionada */
+select option:first-child {
+  color: var(--primary);
+  font-weight: bold;
+}
+select option:checked {
+  font-weight: bold;
 }
 /*Containers Generales,Datos Usuario*/
 .ContainerGeneral {
