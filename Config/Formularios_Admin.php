@@ -22,20 +22,29 @@ if (isset($_POST["Enviar2"])) {
         $NombreImagen = "Profesor_" . $_FILES['Imagen']['name'];
         $TamañoImagen = $_FILES['Imagen']['size'];
         $Imagen_temporal = $_FILES['Imagen']['tmp_name'];
-        // Leer el contenido binario de la imagen
-        $BinarioImagen = file_get_contents($Imagen_temporal);
+        // Comprueba si existe la imagen Anterior para Rename, Change Locate
+        $Before_NameImage = $_POST["Nom_Imagen"];
+        $rutaImagenAnterior = "../Assets/Photos_Teacher/".$Before_NameImage;
+        if (file_exists($rutaImagenAnterior)) {
+            $New_NameImage = "Obsolete_".$Before_NameImage;
+            rename($rutaImagenAnterior, "../Assets/Photos_Teacher/Photos_Teacher_Obsolete/".$New_NameImage);
+        }
         // Mover la imagen a la carpeta de destino
         move_uploaded_file($Imagen_temporal, "../Assets/Photos_Teacher/$NombreImagen");
-        // Insertar en la base de datos
-        $sql_TbImagen = "INSERT INTO imagenes (Nombre_Imagen, imagen) VALUES (?, ?)";
+       // Actualizar en la base de datos utilizando una consulta preparada
+        $sql_TbImagen = "UPDATE imagenes SET Nombre_Imagen=?, imagen=? WHERE Id_Imagen=?";
         $stmt = $conexion->prepare($sql_TbImagen);
-        $stmt->bind_param('ss', $NombreImagen, $BinarioImagen);
-        $stmt->execute();
+        $stmt->bind_param('ssi', $NombreImagen, $BinarioImagen, $ultimoId_Imagen);
+        // Leer el contenido binario de la imagen
+        $BinarioImagen = file_get_contents("../Assets/Photos_Teacher/$NombreImagen");
+        // Ejecutar la consulta preparada
+        // Ejecutar la consulta preparada y capturar la excepción en caso de error
+        try {
+            $stmt->execute();
+        } catch (Exception $e) {
+            echo "Error al actualizar la imagen: " . $e->getMessage();
+        }
         $stmt->close();
-        /* Obtener el último ID insertado */
-        $ultimoId_Imagen = mysqli_insert_id($conexion);
-    } else {
-        $ultimoId_Imagen = $_POST['id_lastImg'];
     }
     $sentencia = $conexion->prepare("SELECT * FROM profesor WHERE Email=?");
     $sentencia->bind_param('s', $Correo);

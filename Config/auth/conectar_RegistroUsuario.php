@@ -30,9 +30,8 @@ if (isset($_POST["button_Auth"])) {
     $sentencia->close();
     $conexion->close();
 }
-
 if (isset($_POST["Cerrar_Login"])) {
     session_destroy();
-    echo "<script>alert('Sesion Cerrada')</script>";
+    echo "<script>alert('SESION CERRADA')</script>";
     echo "<script>location.href='../../Login_Users/profesor_y_admin.php'</script>";
 }

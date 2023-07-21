@@ -133,7 +133,7 @@ if (isset($_POST["Enviar2"])) {
         ("ERROR EN LA INSERCION" . $Id_Persona);
     mysqli_close($conexion);
     echo "(<script>alert('LOS REGISTROS SE INSERTARON CORRECTAMENTE')</script>)";
-    echo "<script>location.href = '../Formulario/R_profesor.php'</script>";
+    echo "<script>location.href = '../Formulario/Create_profesor.php'</script>";
 }
 
 /* R_ANOTACION */
@@ -155,7 +155,11 @@ if (isset($_POST["Enviar5"])) {
 if (isset($_POST["Enviar6"])) {
     $nombre = $_SESSION['NombreProfe'];
     $Id_Anota = $_POST["NumeroModificar"];
-    $tipoFalta = $_POST["tipoFalta"];
+    $tipoFalta = $_POST["TipoFalta"];
+    if ($tipoFalta === "mantener") {
+        // El usuario ha seleccionado la opción "mantener", asignar el valor actual del campo
+        $tipoFalta = $_POST["tipoFaltaActual"];
+    }
     $descripcion = $_POST["descripcion"];
     $sql_detalle = "UPDATE anotacion SET Nombre_Profesor_Modif='" . $nombre . "',Tipo_Falta='" . $tipoFalta . "', Descripcion_Falta='" . $descripcion . "'
     WHERE Id_Anotacion=" . $Id_Anota;
@@ -164,6 +168,6 @@ if (isset($_POST["Enviar6"])) {
         ("ERROR EN LA INSERCION" . $Id_Persona);
     mysqli_close($conexion);
     echo "<script>alert('LOS REGISTROS SE ACTUALIZARON CORRECTAMENTE')</script>";
-    echo "<script>location.href = '../Profesor/historial_anotaciones.php'</script>";
+    echo "<script>location.href = '../Profesor/historial_anotaciones.php'</script>";   
 }
 ?>
