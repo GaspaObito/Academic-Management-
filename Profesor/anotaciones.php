@@ -69,13 +69,8 @@
                                     <div><a id="btnCerrar">
                                     <div class="botonAtras">
                                         <div class="margen__boton">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="icon icon-tabler icon-tabler-x" width="40" height="40"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M18 6l-12 12" />
-                                                <path d="M6 6l12 12" />
+                                            <svg class="navbar-icon" style="margin:0;">
+                                                <use xlink:href="../Assets/Svg/Symbol_X.svg#Symbol_X-icon">
                                             </svg>
                                         </div>
                                     </div>
@@ -100,7 +95,7 @@
                                 </div>
                                 <div class="formulario__miniventana">
                                     <label>Dirección</label>
-                                    <input readonly class="input_miniventana" type="text" value="' . $extraido['Direccion'] . '">
+                                    <input readonly class="input_miniventana" type="text" value="' . $extraido['Residencia'] . '">
                                 </div>
                                 <div class="formulario__miniventana">
                                     <label>Lugar Nacimiento</label>
@@ -119,16 +114,9 @@
                             <div> <a id="btnSiguiente1">
                                 <div class="botonAtras">
                                     <div class="margen__boton">
-                                        <svg xmlns="http://www.w3.org/2000/svg"
-                                            class="icon icon-tabler icon-tabler-arrow-bar-to-right" width="40"
-                                            height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
-                                            fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M14 12l-10 0" />
-                                            <path d="M14 12l-4 4" />
-                                            <path d="M14 12l-4 -4" />
-                                            <path d="M20 4l0 16" />
-                                       </svg>
+                                            <svg class="navbar-icon" style="margin:0;">
+                                                <use xlink:href="../Assets/Svg/Arrow_Next.svg#Arrow_Next-icon">
+                                            </svg>
                                         </div>
                                     </div>
                                 </a>
@@ -153,13 +141,8 @@
                                 <div><a id="btnCerrar1">
                                     <div class="botonAtras">
                                         <div class="margen__boton">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="icon icon-tabler icon-tabler-x" width="40" height="40"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M18 6l-12 12" />
-                                                <path d="M6 6l12 12" />
+                                            <svg class="navbar-icon" style="margin:0;">
+                                                <use xlink:href="../Assets/Svg/Symbol_X.svg#Symbol_X-icon">
                                             </svg>
                                         </div>
                                     </div>
@@ -195,15 +178,8 @@
                                     <a id="btnAnterior2">
                                         <div class="botonAtras">
                                             <div class="margen__boton">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-arrow-bar-left" width="40"
-                                                    height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 12l10 0" />
-                                                    <path d="M4 12l4 4" />
-                                                    <path d="M4 12l4 -4" />
-                                                    <path d="M20 4l0 16" />
+                                                <svg class="navbar-icon" style="margin:0;">
+                                                    <use xlink:href="../Assets/Svg/Arrow_Back.svg#Arrow_Back-icon">
                                                 </svg>
                                             </div>
                                         </div>
@@ -213,15 +189,8 @@
                                     <a id="btnSiguiente2">
                                         <div class="botonAtras">
                                             <div class="margen__boton">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-arrow-bar-to-right" width="40"
-                                                    height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M14 12l-10 0" />
-                                                    <path d="M14 12l-4 4" />
-                                                    <path d="M14 12l-4 -4" />
-                                                    <path d="M20 4l0 16" />
+                                                <svg class="navbar-icon" style="margin:0;">
+                                                    <use xlink:href="../Assets/Svg/Arrow_Next.svg#Arrow_Next-icon">
                                                 </svg>
                                             </div>
                                         </div>
@@ -243,13 +212,8 @@
                                 <div><a id="btnCerrar2">
                                     <div class="botonAtras">
                                         <div class="margen__boton">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="icon icon-tabler icon-tabler-x" width="40" height="40"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                <path d="M18 6l-12 12" />
-                                                <path d="M6 6l12 12" />
+                                            <svg class="navbar-icon" style="margin:0;">
+                                                <use xlink:href="../Assets/Svg/Symbol_X.svg#Symbol_X-icon">
                                             </svg>
                                         </div>
                                     </div>
@@ -293,15 +257,8 @@
                                     <a id="btnAnterior3">
                                         <div class="botonAtras">
                                             <div class="margen__boton">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-arrow-bar-left" width="40"
-                                                    height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M4 12l10 0" />
-                                                    <path d="M4 12l4 4" />
-                                                    <path d="M4 12l4 -4" />
-                                                    <path d="M20 4l0 16" />
+                                                <svg class="navbar-icon" style="margin:0;">
+                                                    <use xlink:href="../Assets/Svg/Arrow_Back.svg#Arrow_Back-icon">
                                                 </svg>
                                             </div>
                                         </div>
@@ -311,15 +268,8 @@
                                     <a id="btnSiguiente3">
                                         <div class="botonAtras">
                                             <div class="margen__boton">
-                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-arrow-bar-to-right" width="40"
-                                                    height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
-                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M14 12l-10 0" />
-                                                    <path d="M14 12l-4 4" />
-                                                    <path d="M14 12l-4 -4" />
-                                                    <path d="M20 4l0 16" />
+                                                <svg class="navbar-icon" style="margin:0;">
+                                                    <use xlink:href="../Assets/Svg/Arrow_Next.svg#Arrow_Next-icon">
                                                 </svg>
                                             </div>
                                         </div>
@@ -340,14 +290,9 @@
                              <div><a id="btnCerrar3">
                              <div class="botonAtras">
                                  <div class="margen__boton">
-                                     <svg xmlns="http://www.w3.org/2000/svg"
-                                         class="icon icon-tabler icon-tabler-x" width="40" height="40"
-                                         viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
-                                         stroke-linecap="round" stroke-linejoin="round">
-                                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                         <path d="M18 6l-12 12" />
-                                         <path d="M6 6l12 12" />
-                                     </svg>
+                                    <svg class="navbar-icon" style="margin:0;">
+                                        <use xlink:href="../Assets/Svg/Symbol_X.svg#Symbol_X-icon">
+                                    </svg>
                                  </div>
                              </div>
                          </a></div>'
@@ -393,16 +338,9 @@
                              <a id="btnAnterior4">
                                  <div class="botonAtras">
                                      <div class="margen__boton">
-                                         <svg xmlns="http://www.w3.org/2000/svg"
-                                             class="icon icon-tabler icon-tabler-arrow-bar-left" width="40"
-                                             height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff"
-                                             fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                             <path d="M4 12l10 0" />
-                                             <path d="M4 12l4 4" />
-                                             <path d="M4 12l4 -4" />
-                                             <path d="M20 4l0 16" />
-                                         </svg>
+                                        <svg class="navbar-icon" style="margin:0;">
+                                            <use xlink:href="../Assets/Svg/Arrow_Back.svg#Arrow_Back-icon">
+                                        </svg>
                                      </div>
                                  </div>
                              </a>
