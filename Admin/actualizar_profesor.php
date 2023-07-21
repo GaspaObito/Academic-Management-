@@ -112,6 +112,7 @@
                 <div>
                     <label>Imagen Usuario Anterior</label>
                     <div class="setting"> 
+                        <input type="hidden" name="Nom_Imagen" value="<?php echo $extraido['Nombre_Imagen']; ?>">
                         <div class="imagenChange Input_Text">   
                             <img src="../Assets/Photos_Teacher/<?php echo $extraido['Nombre_Imagen']; ?>">
                         </div> 
@@ -122,8 +123,8 @@
                         </div> 
                     </div> 
                 </div> 
-                    <input type="hidden" name="id_lastImg" value="' . $extraido['Id_Imagen'] . '">
-                    <input type="hidden" name="id_profesor" value="' . $extraido['Id_Profesor'] . '">                     
+                    <input type="hidden" name="id_lastImg" value="<?php echo $extraido['Id_Imagen']; ?>">
+                    <input type="hidden" name="id_profesor" value="<?php echo $extraido['Id_Profesor']; ?>">                     
             </div>
             <?php } ?> 
             <div class="alinear-boton">

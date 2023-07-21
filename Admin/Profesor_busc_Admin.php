@@ -140,7 +140,7 @@
            <?php } ?>
         </div>
         <div class="alinear-boton">
-            <a href="../Formulario/R_profesor.php"> <button class="boton" type="submit" name="buscarDatos">AÑADIR PROFESOR</button></a>
+            <a href="../Formulario/Create_profesor.php"> <button class="boton" type="submit" name="buscarDatos">AÑADIR PROFESOR</button></a>
         </div>
     </div>
     </div>
