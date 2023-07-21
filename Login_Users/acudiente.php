@@ -8,10 +8,10 @@
                 sobre
                 el desempeño y el progreso de los estudiantes.
             </p>
-            <form class="Form_Acudiente" style="align-items: center;" action="historial_anotaciones.php" method="post">
+            <form class="Form_Acudiente" style="align-items: center;" action="../Config/auth/conectar_RegistroUsuario.php" method="post">
                 <label>Ingreso del N.i:</label>
                 <input class="Input_Text" type="number" name="Identificacionn" placeholder="N.I del estudiante" oninput="javascript: if (this.value.length > 10) this.value = this.value.slice(0, 10);">
-                <button class="boton" type="submit" name='buscarDatos'>INICIAR SESION</button>
+                <button class="boton" type="submit" name='LoginStudent'>INICIAR SESION</button>
             </form>
         </div>
     </main>
